@@ -6,7 +6,7 @@
 }
 
 html {
-    scroll-behavior: smooth; /* Enable smooth scrolling */
+    scroll-behavior: smooth; /* Smooth scrolling */
 }
 
 body {
@@ -27,7 +27,7 @@ body {
     padding: 20px;
 }
 
-/* Sticky Header */
+/* Sticky and Shrinking Header */
 header {
     background-color: #333;
     color: #fff;
@@ -36,16 +36,27 @@ header {
     align-items: center;
     padding: 20px 0;
     width: 100%;
-    position: sticky; /* Make the header sticky */
-    top: 0; /* Stick to the top of the page */
-    z-index: 1000; /* Ensure the header is always on top */
-    box-shadow: 0 4px 2px -2px gray; /* Optional: Add a subtle shadow for better visibility */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 2px -2px gray;
+    transition: all 0.3s ease; /* Transition for smooth shrinking */
+}
+
+header.shrink {
+    padding: 10px 0; /* Reduced padding when shrunk */
 }
 
 header .logo {
     font-size: 2rem;
+    transition: font-size 0.3s ease; /* Smooth font resizing */
 }
 
+header.shrink .logo {
+    font-size: 1.5rem; /* Smaller font when scrolled */
+}
+
+/* Navigation Styles */
 header nav ul {
     list-style: none;
     display: flex;
@@ -79,14 +90,14 @@ header nav ul li a:hover {
 }
 
 .social-icons a:hover {
-    color: #1DA1F2; /* Example for Twitter, customize for other icons */
+    color: #1DA1F2;
 }
 
 /* Section Styles */
 section {
     padding: 50px 0;
     text-align: center;
-    scroll-margin-top: 80px; /* Adjust scroll position to avoid overlapping by sticky header */
+    scroll-margin-top: 80px; /* Prevent content overlap by sticky header */
 }
 
 h2 {
@@ -152,27 +163,54 @@ footer {
     margin-top: auto;
 }
 
-/* Responsiveness for smaller screens */
+/* Background Shapes */
+.background-shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    background: linear-gradient(135deg, rgba(255, 0, 150, 0.7), rgba(0, 204, 255, 0.7));
+}
+
+.background-shapes::after {
+    content: '';
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    width: 300px;
+    height: 300px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    animation: float 6s infinite ease-in-out;
+}
+
+/* Background Animation */
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(30px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Styles */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
-        align-items: flex-start;
     }
 
     header nav ul {
         flex-direction: column;
-        margin-left: 0;
+        margin-top: 10px;
     }
 
     header nav ul li {
         margin: 10px 0;
-    }
-
-    .social-icons {
-        margin-top: 10px;
-    }
-
-    .container {
-        width: 90%;
     }
 }
