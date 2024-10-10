@@ -1,7 +1,7 @@
 /* General Styles */
 body {
     font-family: Arial, sans-serif;
-    margin: center;
+    margin: 0;
     padding: 0;
     background-color: #f4f4f4;
     color: #333;
@@ -62,7 +62,7 @@ header nav ul li a:hover {
 }
 
 .social-icons a:hover {
-    color: #1DA1F2; /* Example for Twitter, customize for other icons */
+    color: #f38816; /* Example for Instagram, customize for other icons */
 }
 
 /* Responsiveness for smaller screens */
