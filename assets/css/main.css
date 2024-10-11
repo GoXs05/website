@@ -1734,6 +1734,11 @@ input, select, textarea {
 		text-decoration: underline; /* Add underline on hover */
 	}
 
+/*Resume CSS*/
+	#resume a {
+		cursor: pointer; /* Changes the cursor to a hand icon when hovering over the image */
+	}
+
 
 
 /* Footer */
