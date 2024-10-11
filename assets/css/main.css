@@ -1677,6 +1677,7 @@ input, select, textarea {
     text-align: center;
     padding: 10px;
     transition: opacity 0.3s ease;
+	transition: transform 0.3s ease;
 }
 
 .project:hover .project-description {
