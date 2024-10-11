@@ -1624,65 +1624,93 @@ input, select, textarea {
 		}
 
 /* Adjusted styles for the project title, icon, and description */
-.project-title {
-    font-size: 1.2em;
-    font-weight: normal;
-    text-align: center;
-    margin-bottom: 10px;
-    transition: font-weight 0.3s ease;
-}
+	.project-title {
+		font-size: 1.2em;
+		font-weight: normal;
+		text-align: center;
+		margin-bottom: 10px;
+		transition: font-weight 0.3s ease;
+	}
 
-.project:hover .project-title {
-    font-weight: bold;
-}
+	.project:hover .project-title {
+		font-weight: bold;
+	}
 
 /* Updated styles for larger project images and proper description placement */
-.projects-container {
-    display: flex;
-    flex-direction: column; /* Ensures one project per row */
-    align-items: center;
-    gap: 40px; /* Space between each project */
-}
+	.projects-container {
+		display: flex;
+		flex-direction: column; /* Ensures one project per row */
+		align-items: center;
+		gap: 40px; /* Space between each project */
+	}
 
-.project {
-    position: relative;
-    width: 80%; /* Takes up more space to allow larger images */
-    max-width: 600px; /* Maximum size for readability */
-    margin: 0 auto; /* Center the project on the page */
-    cursor: pointer;
-}
+	.project {
+		position: relative;
+		width: 80%; /* Takes up more space to allow larger images */
+		max-width: 600px; /* Maximum size for readability */
+		margin: 0 auto; /* Center the project on the page */
+		cursor: pointer;
+	}
 
-.project-icon {
-    width: 100%;
-    height: auto; /* Maintain aspect ratio */
-    max-height: 300px; /* Set a max height */
-    border: 2px solid #fff;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-}
+	.project-icon {
+		width: 100%;
+		height: auto; /* Maintain aspect ratio */
+		max-height: 300px; /* Set a max height */
+		border: 2px solid #fff;
+		border-radius: 8px;
+		transition: transform 0.3s ease;
+	}
 
-.project:hover .project-icon {
-    transform: scale(1.05); /* Slightly enlarge on hover */
-}
+	.project:hover .project-icon {
+		transform: scale(1.05); /* Slightly enlarge on hover */
+	}
 
-.project-description {
-    position: absolute;
-    bottom: 0; /* Position the description at the bottom of the image */
-    left: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.85); /* Semi-transparent background */
-    color: #fff;
-    opacity: 0;
-    border-radius: 0 0 8px 8px; /* Round the bottom corners */
-    text-align: center;
-    padding: 10px;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
+	.project-description {
+		position: absolute;
+		bottom: 0; /* Position the description at the bottom of the image */
+		left: 0;
+		width: 100%;
+		background-color: rgba(0, 0, 0, 0.85); /* Semi-transparent background */
+		color: #fff;
+		opacity: 0;
+		border-radius: 0 0 8px 8px; /* Round the bottom corners */
+		text-align: center;
+		padding: 10px;
+		transition: opacity 0.3s ease, transform 0.3s ease;
+	}
 
-.project:hover .project-description {
-    opacity: 1; /* Show description on hover */
-	transform: scale(1.05);
-}
+	.project:hover .project-description {
+		opacity: 1; /* Show description on hover */
+		transform: scale(1.05);
+	}
+
+
+/*learn more links for projects*/
+	.learn-more-link {
+		display: inline-block;
+		margin-top: 10px;
+		color: #3498db; /* Link color */
+		text-decoration: none; /* Remove underline */
+		font-weight: bold;
+	}
+
+	.learn-more-link:hover {
+		color: #2980b9; /* Darken the color on hover */
+		text-decoration: underline; /* Add underline on hover */
+	}
+
+/*Back Arriw styling for Project Pages*/
+	.back-arrow {
+		display: block; /* Ensures the arrow takes its own line */
+		font-size: 1.2em; /* Adjusts the size of the arrow */
+		margin-bottom: 20px; /* Adds space below the arrow */
+		text-decoration: none; /* Removes underline */
+		color: #007bff; /* Change to your preferred color */
+	}
+
+	.back-arrow:hover {
+		text-decoration: underline; /* Adds underline on hover */
+	}
 
 
 /* Footer */
