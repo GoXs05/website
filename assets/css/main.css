@@ -1661,10 +1661,6 @@ input, select, textarea {
     transition: transform 0.3s ease;
 }
 
-.project-icon:hover {
-    transform: scale(1.05); /* Slightly enlarge on hover */
-}
-
 .project-description {
     position: absolute;
     bottom: 0; /* Position the description at the bottom of the image */
