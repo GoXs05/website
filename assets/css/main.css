@@ -1716,19 +1716,27 @@ input, select, textarea {
 		text-decoration: underline; /* Add underline on hover */
 	}
 
-/*Back Arrow styling for Project Pages*/
+/* Styles for the Back Arrow */
 	.back-arrow {
-		display: block; /* Ensures the arrow takes its own line */
-		font-size: 1.2em; /* Adjusts the size of the arrow */
-		margin-bottom: 20px; /* Adds space below the arrow */
-		text-decoration: none; /* Removes underline */
-		color: #007bff; /* Change to your preferred color */
+		display: inline-block; /* Makes the container size fit its content */
+		margin: 10px; /* Add some margin for spacing */
 	}
 
-	.back-arrow:hover {
-		text-decoration: underline; /* Adds underline on hover */
+	.back-link {
+		text-decoration: none; /* Removes underline for link */
+		color: #007bff; /* Link color */
+		cursor: pointer; /* Pointer cursor for the link */
 	}
 
+	.back-link:hover {
+		text-decoration: underline; /* Underline on hover */
+	}
+
+	/* Optional: Adjust icon size if necessary */
+	.back-arrow .icon {
+		font-size: 1.2em; /* Adjust size as needed */
+		margin-right: 5px; /* Space between icon and text */
+	}
 
 /* Footer */
 
