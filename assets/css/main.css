@@ -1623,7 +1623,7 @@ input, select, textarea {
 
 		}
 
-/* Styles for the project title, icon, and description */
+	/* Styles for the project title, icon, and description */
 	.project-title {
 		font-size: 1.1em;
 		font-weight: normal;
@@ -1636,56 +1636,68 @@ input, select, textarea {
 		font-weight: bold;
 	}
 
-	/* Existing styles for the project container */
-	.projects-container {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-		gap: 20px;
-	}
+/* Adjusted styles for the project title, icon, and description */
+.project-title {
+    font-size: 1.2em;
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 10px;
+    transition: font-weight 0.3s ease;
+}
 
-	.project {
-		position: relative;
-		width: 150px;
-		height: 180px; /* Adjusted to accommodate the title */
-		cursor: pointer;
-	}
+.project:hover .project-title {
+    font-weight: bold;
+}
 
-	.project-icon {
-		width: 100%;
-		height: 100%;
-		background-size: cover;
-		background-position: center;
-		border: 2px solid #fff;
-		border-radius: 8px;
-		transition: transform 0.3s ease;
-	}
+/* Updated styles for larger project images and proper description placement */
+.projects-container {
+    display: flex;
+    flex-direction: column; /* Ensures one project per row */
+    align-items: center;
+    gap: 40px; /* Space between each project */
+}
 
-	.project-icon:hover {
-		transform: scale(1.1);
-	}
+.project {
+    position: relative;
+    width: 80%; /* Takes up more space to allow larger images */
+    max-width: 600px; /* Maximum size for readability */
+    margin: 0 auto; /* Center the project on the page */
+    cursor: pointer;
+}
 
-	.project-description {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		background-color: rgba(0, 0, 0, 0.8);
-		color: #fff;
-		opacity: 0;
-		border-radius: 8px;
-		text-align: center;
-		padding: 10px;
-		transition: opacity 0.3s ease;
-	}
+.project-icon {
+    width: 100%;
+    height: 300px; /* Increased height for a more prominent display */
+    background-size: cover;
+    background-position: center;
+    border: 2px solid #fff;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
 
-	.project:hover .project-description {
-		opacity: 1;
-	}
+.project-icon:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.project-description {
+    position: absolute;
+    top: 100%; /* Position the description below the image icon */
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    color: #fff;
+    opacity: 0;
+    border-radius: 8px;
+    text-align: center;
+    padding: 15px;
+    transition: opacity 0.3s ease;
+    margin-top: 10px; /* Space between the image and description */
+    z-index: 1; /* Ensures the description is above other content */
+}
+
+.project:hover .project-description {
+    opacity: 1; /* Show description on hover */
+}
 
 
 /* Footer */
