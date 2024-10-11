@@ -1684,6 +1684,23 @@ input, select, textarea {
 		transform: scale(1.05);
 	}
 
+/* General Styles for Project Icon and Description */
+	.project-icon,
+	.project-description {
+		cursor: default; /* Sets the cursor to default for icons and descriptions */
+	}
+
+	/* Link Styles */
+	.project-description a {
+		color: #007bff; /* Change to your preferred color for links */
+		text-decoration: none; /* Removes underline for links */
+	}
+
+	.project-description a:hover {
+		text-decoration: underline; /* Adds underline on hover */
+		cursor: pointer; /* Changes cursor to pointer for links */
+	}
+
 
 /*learn more links for projects*/
 	.learn-more-link {
@@ -1699,7 +1716,7 @@ input, select, textarea {
 		text-decoration: underline; /* Add underline on hover */
 	}
 
-/*Back Arriw styling for Project Pages*/
+/*Back Arrow styling for Project Pages*/
 	.back-arrow {
 		display: block; /* Ensures the arrow takes its own line */
 		font-size: 1.2em; /* Adjusts the size of the arrow */
