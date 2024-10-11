@@ -1676,8 +1676,7 @@ input, select, textarea {
     border-radius: 0 0 8px 8px; /* Round the bottom corners */
     text-align: center;
     padding: 10px;
-    transition: opacity 0.3s ease;
-	transition: transform 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .project:hover .project-description {
