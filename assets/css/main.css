@@ -1649,6 +1649,19 @@ input, select, textarea {
     font-weight: bold;
 }
 
+/* Adjusted styles for the project title, icon, and description */
+.project-title {
+    font-size: 1.2em;
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 10px;
+    transition: font-weight 0.3s ease;
+}
+
+.project:hover .project-title {
+    font-weight: bold;
+}
+
 /* Updated styles for larger project images and proper description placement */
 .projects-container {
     display: flex;
@@ -1681,18 +1694,16 @@ input, select, textarea {
 
 .project-description {
     position: absolute;
-    top: 100%; /* Position the description below the image icon */
+    bottom: 0; /* Position the description at the bottom of the image */
     left: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.85);
+    background-color: rgba(0, 0, 0, 0.85); /* Semi-transparent background */
     color: #fff;
     opacity: 0;
-    border-radius: 8px;
+    border-radius: 0 0 8px 8px; /* Round the bottom corners */
     text-align: center;
-    padding: 15px;
+    padding: 10px;
     transition: opacity 0.3s ease;
-    margin-top: 10px; /* Space between the image and description */
-    z-index: 1; /* Ensures the description is above other content */
 }
 
 .project:hover .project-description {
