@@ -1706,7 +1706,7 @@ input, select, textarea {
 	.learn-more-link {
 		display: inline-block;
 		margin-top: 10px;
-		color: #3498db; /* Link color */
+		color: #ffffff; /* Link color */
 		text-decoration: none; /* Remove underline */
 		font-weight: bold;
 	}
@@ -1723,9 +1723,15 @@ input, select, textarea {
 	}
 
 	.back-link {
+		font-size: 1em;
 		text-decoration: none; /* Removes underline for link */
-		color: #007bff; /* Link color */
+		color: #ffffff; /* Link color */
 		cursor: pointer; /* Pointer cursor for the link */
+	}
+
+	.back-link:hover {
+		color: #2980b9; /* Darken the color on hover */
+		text-decoration: underline; /* Add underline on hover */
 	}
 
 
