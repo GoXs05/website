@@ -1661,7 +1661,7 @@ input, select, textarea {
     transition: transform 0.3s ease;
 }
 
-.project-icon:hover {
+.project:hover .project-icon {
     transform: scale(1.05); /* Slightly enlarge on hover */
 }
 
