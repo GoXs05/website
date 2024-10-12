@@ -264,7 +264,7 @@
 								</div>
 								<h2 class="major">I. Siege</h2>
 								<p>Click the play button below to listen:</p>
-								<audio controls>
+								<audio id="music-audio" controls>
 									<source src="Music_MP3s/Protocol_Xenod_Suite_1/I. Siege.mp3" type="audio/mpeg">
 									Your browser does not support the audio element.
 								</audio>
@@ -277,7 +277,7 @@
 								</div>
 								<h2 class="major">II. Infiltration</h2>
 								<p>Click the play button below to listen:</p>
-								<audio controls>
+								<audio id="music-audio" controls>
 									<source src="Music_MP3s/Protocol_Xenod_Suite_1/II. Infiltration.mp3" type="audio/mpeg">
 									Your browser does not support the audio element.
 								</audio>
@@ -290,7 +290,7 @@
 								</div>
 								<h2 class="major">III. Raxylon</h2>
 								<p>Click the play button below to listen:</p>
-								<audio controls>
+								<audio id="music-audio" controls>
 									<source src="Music_MP3s/Protocol_Xenod_Suite_1/III. Raxylon.mp3" type="audio/mpeg">
 									Your browser does not support the audio element.
 								</audio>
@@ -303,7 +303,7 @@
 								</div>
 								<h2 class="major">IV. The Spire</h2>
 								<p>Click the play button below to listen:</p>
-								<audio controls>
+								<audio id="music-audio" controls>
 									<source src="Music_MP3s/Protocol_Xenod_Suite_1/IV. The Spire.mp3" type="audio/mpeg">
 									Your browser does not support the audio element.
 								</audio>
@@ -363,7 +363,7 @@
 								</div>
 								<h2 class="major">I. Protocol XenoD</h2>
 								<p>Click the play button below to listen:</p>
-								<audio controls>
+								<audio id="music-audio" controls>
 									<source src="Music_MP3s/Protocol_XenoD_Suite_2/I. Protocol XenoD.mp3" type="audio/mpeg">
 									Your browser does not support the audio element.
 								</audio>
@@ -376,7 +376,7 @@
 								</div>
 								<h2 class="major">II. Dare To Dream</h2>
 								<p>Click the play button below to listen:</p>
-								<audio controls>
+								<audio id="music-audio" controls>
 									<source src="Music_MP3s/Protocol_XenoD_Suite_2/II. Dare To Dream.mp3" type="audio/mpeg">
 									Your browser does not support the audio element.
 								</audio>
@@ -389,7 +389,7 @@
 								</div>
 								<h2 class="major">III. Chimeraspace</h2>
 								<p>Click the play button below to listen:</p>
-								<audio controls>
+								<audio id="music-audio" controls>
 									<source src="Music_MP3s/Protocol_XenoD_Suite_2/III. Chimeraspace.mp3" type="audio/mpeg">
 									Your browser does not support the audio element.
 								</audio>
@@ -402,7 +402,7 @@
 								</div>
 								<h2 class="major">IV. Garnian Lights</h2>
 								<p>Click the play button below to listen:</p>
-								<audio controls>
+								<audio id="music-audio" controls>
 									<source src="Music_MP3s/Protocol_XenoD_Suite_2/IV. Garnian Lights.mp3" type="audio/mpeg">
 									Your browser does not support the audio element.
 								</audio>
@@ -415,7 +415,7 @@
 								</div>
 								<h2 class="major">V. The Isles of Ketros</h2>
 								<p>Click the play button below to listen:</p>
-								<audio controls>
+								<audio id="music-audio" controls>
 									<source src="Music_MP3s/Protocol_XenoD_Suite_2/V. The Isles of Ketros.mp3" type="audio/mpeg">
 									Your browser does not support the audio element.
 								</audio>
@@ -462,7 +462,7 @@
 								</div>
 								<h2 class="major">The Four Tides</h2>
 								<p>Click the play button below to listen:</p>
-								<audio controls>
+								<audio id="music-audio" controls>
 									<source src="Music_MP3s/Singles/The Four Tides.mp3" type="audio/mpeg">
 									Your browser does not support the audio element.
 								</audio>
@@ -475,7 +475,7 @@
 								</div>
 								<h2 class="major">Pirates</h2>
 								<p>Click the play button below to listen:</p>
-								<audio controls>
+								<audio id="music-audio" controls>
 									<source src="Music_MP3s/Singles/Pirates.mp3" type="audio/mpeg">
 									Your browser does not support the audio element.
 								</audio>
@@ -488,12 +488,38 @@
 								</div>
 								<h2 class="major">Voices From A Distant Past</h2>
 								<p>Click the play button below to listen:</p>
-								<audio controls>
+								<audio id="music-audio" controls>
 									<source src="Music_MP3s/Singles/Voices From A Distant Past.mp3" type="audio/mpeg">
 									Your browser does not support the audio element.
 								</audio>
 							</article>
 
+
+
+							<!-- JS Script for managing Audio Playback -->
+							<script>
+								// Store a reference to the audio player
+								const audioPlayer = document.getElementById('music-audio');
+							
+								// Function to stop the audio when navigating away
+								function stopAudio() {
+									if (!audioPlayer.paused) {
+										audioPlayer.pause();
+										audioPlayer.currentTime = 0; // Reset to the beginning
+									}
+								}
+							
+								// Add event listener for article navigation
+								document.addEventListener('DOMContentLoaded', function() {
+									const articles = document.querySelectorAll('article');
+									
+									articles.forEach(article => {
+										article.addEventListener('click', function() {
+											stopAudio(); // Stop audio when a new article is clicked
+										});
+									});
+								});
+							</script>
 
 
 						<!-- Resume -->
