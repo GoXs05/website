@@ -496,26 +496,36 @@
 
 
 
-							<!-- JS Script for managing Audio Playback -->
+						<!-- JS Script for managing Audio Playback -->
 							<script>
-								// Store a reference to the audio player
-								const audioPlayer = document.getElementById('music-audio');
+								let currentlyPlayingAudio = null;
 							
-								// Function to stop the audio when navigating away
-								function stopAudio() {
-									if (!audioPlayer.paused) {
-										audioPlayer.pause();
-										audioPlayer.currentTime = 0; // Reset to the beginning
+								// Function to stop currently playing audio
+								function stopCurrentlyPlayingAudio() {
+									if (currentlyPlayingAudio) {
+										currentlyPlayingAudio.pause();
+										currentlyPlayingAudio.currentTime = 0; // Reset to the beginning
 									}
 								}
 							
-								// Add event listener for article navigation
+								// Event listeners for audio players
 								document.addEventListener('DOMContentLoaded', function() {
-									const articles = document.querySelectorAll('article');
-									
+									const audioPlayers = document.querySelectorAll('.music-audio');
+							
+									audioPlayers.forEach(audioPlayer => {
+										audioPlayer.addEventListener('play', function() {
+											// Stop any currently playing audio
+											stopCurrentlyPlayingAudio();
+											// Set the currently playing audio to the current player
+											currentlyPlayingAudio = audioPlayer;
+										});
+									});
+							
+									// Add event listener for article navigation
+									const articles = document.querySelectorAll('article.music-project');
 									articles.forEach(article => {
 										article.addEventListener('click', function() {
-											stopAudio(); // Stop audio when a new article is clicked
+											stopCurrentlyPlayingAudio(); // Stop audio when a new article is clicked
 										});
 									});
 								});
