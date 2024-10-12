@@ -513,6 +513,16 @@
 									stopCurrentlyPlayingAudio();
 								});
 							
+								// Function to handle stopping audio on back link clicks
+								function handleBackLinkClicks() {
+									const backLinks = document.querySelectorAll('.back-link');
+									backLinks.forEach(link => {
+										link.addEventListener('click', function() {
+											stopCurrentlyPlayingAudio();
+										});
+									});
+								}
+							
 								// Event listeners for audio players
 								document.addEventListener('DOMContentLoaded', function() {
 									const audioPlayers = document.querySelectorAll('.music-audio');
@@ -535,6 +545,8 @@
 											currentlyPlayingAudio = null;
 										});
 									});
+							
+									handleBackLinkClicks(); // Attach click handlers to back links
 								});
 							</script>
 
