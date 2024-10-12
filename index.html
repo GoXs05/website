@@ -497,39 +497,43 @@
 
 
 						<!-- JS Script for managing Audio Playback -->
-							<script>
-								let currentlyPlayingAudio = null;
-							
-								// Function to stop currently playing audio
-								function stopCurrentlyPlayingAudio() {
-									if (currentlyPlayingAudio) {
-										currentlyPlayingAudio.pause();
-										currentlyPlayingAudio.currentTime = 0; // Reset to the beginning
-									}
+						<script>
+							let currentlyPlayingAudio = null;
+					
+							// Function to stop currently playing audio
+							function stopCurrentlyPlayingAudio() {
+								if (currentlyPlayingAudio) {
+									currentlyPlayingAudio.pause();
+									currentlyPlayingAudio.currentTime = 0; // Reset to the beginning
 								}
-							
-								// Event listeners for audio players
-								document.addEventListener('DOMContentLoaded', function() {
-									const audioPlayers = document.querySelectorAll('.music-audio');
-							
-									audioPlayers.forEach(audioPlayer => {
-										audioPlayer.addEventListener('play', function() {
-											// Stop any currently playing audio
-											stopCurrentlyPlayingAudio();
-											// Set the currently playing audio to the current player
-											currentlyPlayingAudio = audioPlayer;
-										});
+							}
+					
+							// Event listeners for audio players
+							document.addEventListener('DOMContentLoaded', function() {
+								const audioPlayers = document.querySelectorAll('.music-audio');
+					
+								audioPlayers.forEach(audioPlayer => {
+									audioPlayer.addEventListener('play', function() {
+										// Stop any currently playing audio
+										stopCurrentlyPlayingAudio();
+										// Set the currently playing audio to the current player
+										currentlyPlayingAudio = audioPlayer;
 									});
-							
-									// Add event listener for article navigation
-									const articles = document.querySelectorAll('article.music-project');
-									articles.forEach(article => {
-										article.addEventListener('click', function() {
-											stopCurrentlyPlayingAudio(); // Stop audio when a new article is clicked
-										});
+					
+									audioPlayer.addEventListener('pause', function() {
+										// Reset the currently playing audio variable if paused
+										if (currentlyPlayingAudio === audioPlayer) {
+											currentlyPlayingAudio = null;
+										}
+									});
+					
+									audioPlayer.addEventListener('ended', function() {
+										// Reset the currently playing audio variable if playback ends
+										currentlyPlayingAudio = null;
 									});
 								});
-							</script>
+							});
+						</script>
 
 
 						<!-- Resume -->
