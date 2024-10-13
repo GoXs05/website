@@ -497,63 +497,6 @@
 								</audio>
 							</article>
 
-							
-
-						<!-- JS Script For Handling Audio Playback-->
-							<script>
-								let currentlyPlayingAudio = null;
-							
-								// Function to stop currently playing audio
-								function stopCurrentlyPlayingAudio() {
-									if (currentlyPlayingAudio) {
-										currentlyPlayingAudio.pause();
-										currentlyPlayingAudio.currentTime = 0; // Reset to the beginning
-										currentlyPlayingAudio = null;
-									}
-								}
-							
-								// Event listener to stop audio when leaving an article
-								document.addEventListener('hashchange', function() {
-									stopCurrentlyPlayingAudio();
-								});
-							
-								// Function to handle stopping audio on back link clicks
-								function handleBackLinkClicks() {
-									const backLinks = document.querySelectorAll('.back-link');
-									backLinks.forEach(link => {
-										link.addEventListener('click', function() {
-											stopCurrentlyPlayingAudio();
-										});
-									});
-								}
-							
-								// Event listeners for audio players
-								document.addEventListener('DOMContentLoaded', function() {
-									const audioPlayers = document.querySelectorAll('.music-audio');
-							
-									audioPlayers.forEach(audioPlayer => {
-										audioPlayer.addEventListener('play', function() {
-											stopCurrentlyPlayingAudio();
-											currentlyPlayingAudio = audioPlayer; // Set the currently playing audio to the current player
-										});
-							
-										audioPlayer.addEventListener('pause', function() {
-											// Reset the currently playing audio variable if paused
-											if (currentlyPlayingAudio === audioPlayer) {
-												currentlyPlayingAudio = null;
-											}
-										});
-							
-										audioPlayer.addEventListener('ended', function() {
-											// Reset the currently playing audio variable if playback ends
-											currentlyPlayingAudio = null;
-										});
-									});
-							
-									handleBackLinkClicks(); // Attach click handlers to back links
-								});
-							</script>
-
 
 
 						<!-- Work Experience -->
@@ -612,19 +555,19 @@
 						<!-- Contact -->
 							<article id="contact">
 								<h2 class="major">Contact</h2>
-								<form method="post" action="#">
+								<form id="contact-form">
 									<div class="fields">
 										<div class="field half">
 											<label for="name">Name</label>
-											<input type="text" name="name" id="name" />
+											<input type="text" name="name" id="name" required />
 										</div>
 										<div class="field half">
 											<label for="email">Email</label>
-											<input type="text" name="email" id="email" />
+											<input type="email" name="email" id="email" required />
 										</div>
 										<div class="field">
 											<label for="message">Message</label>
-											<textarea name="message" id="message" rows="4"></textarea>
+											<textarea name="message" id="message" rows="4" required></textarea>
 										</div>
 									</div>
 									<ul class="actions">
@@ -633,12 +576,12 @@
 									</ul>
 								</form>
 								<ul class="icons">
-									<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="https://www.instagram.com/gokulsr1ram/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="https://www.linkedin.com/in/gokul-sriramasubramanian-a0ab6228b/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+									<li><a href="https://github.com/GoXs05/" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
 								</ul>
 							</article>
+
 					</div> 
 
 				<!-- Footer -->
@@ -657,6 +600,8 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/audio_manager.js"></script>
+			<script src="assets/js/emailjs.js"></script>
 
 	</body>
 </html>
