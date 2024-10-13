@@ -6,11 +6,24 @@
 -->
 <html>
 	<head>
-		<title>Dimension by HTML5 UP</title>
+		<title>gokulsriram.com</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+		<!-- EmailJS -->
+		<script type="text/javascript"
+        	src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+		</script>
+		<script type="text/javascript">
+			(function(){
+				emailjs.init({
+					publicKey: "uOBJIAnnjpWNTVMfu",
+				});
+			})();
+		</script>
+		<script src="assets/js/emailjs.js"></script>
 	</head>
 	<body class="is-preload">
 
@@ -571,8 +584,7 @@
 										</div>
 									</div>
 									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="primary" /></li>
-										<li><input type="reset" value="Reset" /></li>
+										<li><input type="submit" value="Send Message" class="primary" onclick="sendMail()"/></li>
 									</ul>
 								</form>
 								<ul class="icons">
@@ -601,7 +613,6 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script src="assets/js/audio_manager.js"></script>
-			<script src="assets/js/emailjs.js"></script>
 
 	</body>
 </html>
