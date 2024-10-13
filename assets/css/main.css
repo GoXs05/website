@@ -1734,14 +1734,6 @@ input, select, textarea {
 		text-decoration: underline; /* Add underline on hover */
 	}
 
-/*Contact Page*/
-	.sent-button {
-		background-color: #4CAF50; /* Green background */
-		color: white; /* White text */
-		cursor: default; /* Default cursor to indicate the button is not clickable */
-	}
-
-
 
 
 /* Footer */

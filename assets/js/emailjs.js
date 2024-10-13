@@ -1,12 +1,27 @@
 function sendMail() {
+    const nameField = document.getElementById("name");
+    const emailField = document.getElementById("email");
+    const messageField = document.getElementById("message");
+    const errorMessage = document.getElementById("error-message");
+    const sendButton = document.querySelector('input[type="submit"]');
+
+    // Clear any previous error message
+    errorMessage.style.display = 'none';
+    errorMessage.textContent = '';
+
+    // Validate that all fields are filled
+    if (!nameField.value.trim() || !emailField.value.trim() || !messageField.value.trim()) {
+        errorMessage.textContent = 'Please fill out all fields before sending the message.';
+        errorMessage.style.display = 'block';
+        return; // Exit the function if any field is empty
+    }
+
     let params = {
-        name: document.getElementById("name").value,
-        email: document.getElementById("email").value,
-        message: document.getElementById("message").value
+        name: nameField.value,
+        email: emailField.value,
+        message: messageField.value
     };
 
-    const sendButton = document.querySelector('input[type="submit"]');
-    
     // Disable the button to prevent multiple submissions
     sendButton.disabled = true;
     sendButton.value = 'Sending...';
@@ -18,8 +33,9 @@ function sendMail() {
             sendButton.classList.add('sent-button'); // Optional: Add a class to style the button if needed
         })
         .catch(function(error) {
-            // If there's an error, alert the user and re-enable the button
-            alert('Failed to send the message. Please try again.');
+            // If there's an error, show a message and re-enable the button
+            errorMessage.textContent = 'Failed to send the message. Please try again.';
+            errorMessage.style.display = 'block';
             sendButton.disabled = false;
             sendButton.value = 'Send Message';
         });
