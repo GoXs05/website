@@ -127,6 +127,22 @@
 									<a href="#projects" class="back-link">&larr; Projects</a>
 								</div>
 								<h2 class="major">CS Projects</h2>
+								<div class="project">
+									<div class="project-title">Habitability of Exoplanets</div>
+									<img src="images/sunrise.jpg" alt="Project 2 Icon" class="project-icon" />
+									<div class="project-description">
+										<p>This project aims to identify pulsars by analyzing time-series data collected from radio telescopes.</p>
+										<p><a href="#habitable-exoplanets-details">Click here to learn more</a></p>
+									</div>
+								</div>
+								<div class="project">
+									<div class="project-title">Detecting Pulsars</div>
+									<img src="images/pulsar.jpg" alt="Project 2 Icon" class="project-icon" />
+									<div class="project-description">
+										<p>This project uses data from NASA's exoplanet archive to classify potentially habitable exoplanets.</p>
+										<p><a href="#pulsar-detection-details">Click here to learn more</a></p>
+									</div>
+								</div>
 								<div class="projects-container">
 									<div class="project">
 										<div class="project-title">Protocol XenoD</div>
@@ -136,33 +152,8 @@
 											<p><a href="#protocol-xenod-details">Click here to learn more</a></p>
 										</div>
 									</div>
-									<div class="project">
-										<div class="project-title">Habitability of Exoplanets</div>
-										<img src="images/sunrise.jpg" alt="Project 2 Icon" class="project-icon" />
-										<div class="project-description">
-											<p>This project uses data from NASA's exoplanet archive to classify potentially habitable exoplanets.</p>
-											<p><a href="#habitable-exoplanets-details">Click here to learn more</a></p>
-										</div>
-									</div>
 									<!-- Add more projects as needed -->
 								</div>
-							</article>
-
-						<!-- Protocol XenoD Details Article -->
-							<article id="protocol-xenod-details">
-								<div class="back-arrow">
-									<a href="#cs-projects" class="back-link">&larr; CS Projects</a>
-								</div>
-								<h2 class="major">Protocol XenoD</h2>
-								<span class="image main"><img src="images/xenod-2.png" alt="Project 1 Icon" /></span>
-								<p>Protocol XenoD is a story-based first person shooter, set in an distant future with endless technological marvels.
-									Here's the <a href="https://github.com/GoXs05/Chimeraspace" target="_blank">Github repo!</a></p>
-								<p>I am a solo developer who is responsible for game design, programming, storyline, artwork(2D & 3D), animation, music, and
-									SFX/VFX. Currently, I'm working on a "practice range" map called Chimeraspace, which provides players with a practice area
-									to test gunplay, movement, and abilities against enemies. The game runs on Unity as of now.</p>
-									<span class="image main"><img src="images/xenod-3.png" alt="Project 1 Icon" /></span>
-								<p>I'm also currently learning Unreal Engine 5, and am planning to port this game to it soon. This will allow me to include 
-									more realistic graphics and physics simulations, and will help the game's performance.</p>
 							</article>
 
 						<!-- Habitable Exoplanets Details Article -->
@@ -192,7 +183,53 @@
 									This project aims to create a comprehensive model that can assist in prioritizing targets for future space missions and telescopic 
 									observations.</p>
 								<p>Here's the <a href="https://github.com/GoXs05/Habitable_Exoplanets" target="_blank">Github repo!</a></p>
-								
+							</article>
+							
+						<!-- Pulsar Detection Details Article -->
+							<article id="pulsar-detection-details">
+								<div class="back-arrow">
+									<a href="#cs-projects" class="back-link">&larr; CS Projects</a>
+								</div>
+								<h2 class="major">Detecting Pulsars</h2>
+								<span class="image main"><img src="images/pulsar.jpg" alt="Project 2 Icon" /></span>
+								<p>This project aims to identify pulsars by analyzing time-series data collected from radio telescopes. The dataset used for this 
+									project is from the HTRU2 dataset, a sample of pulsar candidates collected during the High Time Resolution Universe Survey.</p>
+								<p>Pulsars are highly magnetized, rotating neutron stars that emit beams of electromagnetic radiation, which can be detected as 
+									pulses of radio waves, X-rays, or gamma rays. These celestial objects are formed from the remnants of massive stars that have 
+									undergone supernova explosions, collapsing under their own gravity to become incredibly dense. Pulsars rotate at incredibly high 
+									speeds, with some spinning several hundred times per second, with their beams sweeping across space like beacons.</p>
+								<p>Detecting pulsars is crucial for various reasons. They serve as precise cosmic clocks that can test the fundamental laws of physics, 
+									such as general relativity, and provide insights into extreme states of matter. Additionally, studying pulsars helps astronomers 
+									understand the evolution of stars and the dynamics of galaxies. Their unique properties make them valuable tools for probing the 
+									universe, detecting gravitational waves, and even aiding in the search for extraterrestrial life.</p>
+								<p>Detecting these celestial signals presents a unique challenge, as they are often weak and buried in significant noise. To tackle 
+									this, the project utilizes Fast Fourier Transform (FFT) to convert the time-series data into the frequency domain, enhancing the 
+									detection of periodic signals. Additionally, wavelet transforms are implemented for time-frequency analysis, enabling the detection 
+									of signals that may change over time. This project also employs pattern matching algorithms to identify repeating patterns within 
+									noisy data, thereby improving the reliability of signal detection. As this project is still a work in progress, some of these 
+									features have yet to be implemented. Here is the
+									<a href="https://github.com/GoXs05/Detecting_Pulsars" target="_blank">Github repo</a> for further details!</p>
+								<p>To enhance signal quality, advanced denoising techniques are integrated to clean the raw telescope data before analysis. Moreover, 
+									machine learning techniques, such as support vector machines, are utilized to differentiate between genuine pulsar signals and 
+									background noise. The project is primarily developed in C++ and utilizes CMake for project management, along with libraries 
+									specialized in FFT and data processing.</p>
+							</article>
+
+						<!-- Protocol XenoD Details Article -->
+							<article id="protocol-xenod-details">
+								<div class="back-arrow">
+									<a href="#cs-projects" class="back-link">&larr; CS Projects</a>
+								</div>
+								<h2 class="major">Protocol XenoD</h2>
+								<span class="image main"><img src="images/xenod-2.png" alt="Project 1 Icon" /></span>
+								<p>Protocol XenoD is a story-based first person shooter, set in an distant future with endless technological marvels.
+									Here's the <a href="https://github.com/GoXs05/Chimeraspace" target="_blank">Github repo!</a></p>
+								<p>I am a solo developer who is responsible for game design, programming, storyline, artwork(2D & 3D), animation, music, and
+									SFX/VFX. Currently, I'm working on a "practice range" map called Chimeraspace, which provides players with a practice area
+									to test gunplay, movement, and abilities against enemies. The game runs on Unity as of now.</p>
+									<span class="image main"><img src="images/xenod-3.png" alt="Project 1 Icon" /></span>
+								<p>I'm also currently learning Unreal Engine 5, and am planning to port this game to it soon. This will allow me to include 
+									more realistic graphics and physics simulations, and will help the game's performance.</p>
 							</article>
 
 
